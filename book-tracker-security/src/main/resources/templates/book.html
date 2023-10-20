@@ -29,7 +29,7 @@
       </nav>
 
 
-     <!--  <div th:insert="components/book-search :: search-panel"></div> -->
+     <div th:insert="components/book-search :: search-panel"></div>
       
       <section class="content">
 
@@ -65,19 +65,19 @@
 
                   <div class="mb-3">
                     <label for="startDate" class="form-label">Start date</label>
-                    <input type="date" class="form-control" 
-                      id="startDate" name="startDate" >
+                    <input type="date"  th:value="${userBooks.startedDate}"  class="form-control" 
+                      id="startDate" name="startedDate" >
                       <!-- th:value="${userBooks.startedDate}" -->
                   </div>
                   <div class="mb-3">
                     <label for="completedDate" class="form-label">Completed date</label>
-                    <input type="date" class="form-control" 
+                    <input type="date"  th:value="${userBooks.completedDate}" class="form-control" 
                       id="completedDate" name="completedDate"  >
                       <!-- th:value="${userBooks.completedDate}"  -->
                   </div>
                   <div class="mb-3">
                     <label for="status" class="form-label">Status</label>
-                    <select id="readingStatus" name="readingStatus" class="form-select" aria-label="Reading status">
+                    <select id="readingStatus" th:field="${userBooks.readingStatus}"  name="readingStatus" class="form-select" aria-label="Reading status">
                     <!-- th:field="${userBooks.readingStatus}"  -->
                       <option selected value="3">Status</option>
                       <option value="0-reading">Currently Reading</option>
@@ -87,7 +87,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="rating" class="form-label">Rating</label>
-                    <select id="rating" name="rating" class="form-select" aria-label="Rating" > 
+                    <select id="rating"  th:field="${userBooks.rating}"  name="rating" class="form-select" aria-label="Rating" > 
                     <!--th:field="${userBooks.rating}"  -->
                       <option selected value="0">Select Rating</option>
                       <option value="1">&#9733;</option>

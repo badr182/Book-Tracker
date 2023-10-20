@@ -1,0 +1,30 @@
+server:
+  port: 8081
+  
+spring:
+  application:
+    name: app-security
+    
+  data:
+    cassandra:
+      keyspace-name: main
+      username: GRdCIrhOeCUZfdqzRXmmnUtN ##<username>                
+      password: yZPnv3AkUbos+-fmsWHKjKM598dDK,6XNP.eedkIA-Ed0+h-kv4895up02JZqE5ZdQfZhiMQsy2dnRLJJQofrChlLjk5Ij,FvZZf-AAija3E5I-uak6nO+SNDCkIs1u+ #<secret>
+      schema-action: create-if-not-exists # recreate
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+
+
+datastax.astra:
+    secure-connect-bundle: secure-connect.zip  
+  
+astra.db:
+  id: 339841cc-f213-4167-afb3-6545b0ed9d66-1 #<db-id>
+  region: europe-west1  
+  keyspace: main
+  application.token: AstraCS:GRdCIrhOeCUZfdqzRXmmnUtN:072d3a3c1d1ac2401c8357bbe8eb74d74b7465340ba329e7ad78874c0bb8d615 ##<token>
+  
+   
